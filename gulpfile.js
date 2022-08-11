@@ -12,8 +12,10 @@ gulp.task("style", function (done) {
         // outputStyle: "compressed",
       })
     )
-    .pipe(gulp.dest("css"));
-  done();
+    .pipe(gulp.dest("css"))
+    .on("end", function (e) {
+      done();
+    });
 });
 
 // watch style
